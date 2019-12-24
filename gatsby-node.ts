@@ -19,22 +19,19 @@ export const onPostBuild: GatsbyNode["onPostBuild"] = async (
   const options = pluginOptions as PluginOptions;
 
   if (!pluginOptions) {
-    args.reporter.error(
+    throw new Error(
       "No options passed to gatsby-plugin-verify-brave! Please see usage in package README."
     );
-    return;
   }
-  if (pluginOptions?.token) {
-    args.reporter.error(
+  if (!pluginOptions.token) {
+    throw new Error(
       "No `token` passed to gatsby-plugin-brave! Please see usage in package README."
     );
-    return;
   }
-  if (pluginOptions?.domain) {
-    args.reporter.error(
+  if (!pluginOptions.domain) {
+    throw new Error(
       "No `domain` passed to gatsby-plugin-brave! Please see usage in package README."
     );
-    return;
   }
 
   const content = stripIndent`
