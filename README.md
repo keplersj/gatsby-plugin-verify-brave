@@ -12,7 +12,7 @@ npm install gatsby-plugin-verify-brave
 
 Add the plugin, your Brave Rewards Token, and (optionally) your domain in your `gatsby-config.js`:
 
-```json
+```js
 module.exports = {
   plugins: [
     {
@@ -24,7 +24,6 @@ module.exports = {
     }
   ]
 };
-
 ```
 
 ## License
