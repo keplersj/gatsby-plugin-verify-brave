@@ -1,5 +1,11 @@
 module.exports = {
+  collectCoverage: true,
   projects: [
+    {
+      displayName: "test",
+      preset: "ts-jest",
+      collectCoverage: true
+    },
     {
       displayName: "lint:prettier",
       preset: "jest-runner-prettier",

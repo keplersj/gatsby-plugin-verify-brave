@@ -38,8 +38,8 @@ export const onPostBuild: GatsbyNode["onPostBuild"] = async (
   const content = stripIndent`
     This is a Brave Rewards publisher verification file.
 
-    Domain: ${options?.domain}
-    Token: ${options?.token}
+    Domain: ${options.domain}
+    Token: ${options.token}
 
     `;
 
