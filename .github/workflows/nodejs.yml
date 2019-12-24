@@ -22,8 +22,8 @@ jobs:
       - run: npm test -- --ci
         env:
           CI: true
-      #   - name: stryker run
-      #     run: npm run test:mutation
+      - name: stryker run
+        run: npm run test:mutation
       - uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
