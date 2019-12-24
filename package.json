@@ -28,6 +28,7 @@
   "devDependencies": {
     "@types/common-tags": "^1.8.0",
     "@types/jest": "^24.0.24",
+    "@types/mkdirp": "^0.5.2",
     "gatsby": "^2.18.17",
     "jest": "^24.9.0",
     "jest-runner-prettier": "^0.3.4",
@@ -36,7 +37,8 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "common-tags": "^1.8.0"
+    "common-tags": "^1.8.0",
+    "mkdirp": "^0.5.1"
   },
   "peerDependencies": {
     "gatsby": "^2.0.0"

@@ -3,9 +3,10 @@ import * as path from "path";
 import * as fs from "fs";
 import { promisify } from "util";
 import { GatsbyNode } from "gatsby";
+import mkdirp from "mkdirp";
 
-const publicPath = "./public";
-const filePath = ".well-known/brave-rewards-verification.txt";
+const dirPath = "./public/.well-known";
+const filePath = "brave-rewards-verification.txt";
 
 interface PluginOptions {
   token?: string;
@@ -42,7 +43,9 @@ export const onPostBuild: GatsbyNode["onPostBuild"] = async (
 
     `;
 
-  const outputPath = path.join(publicPath, filePath);
+  await promisify(mkdirp)(dirPath);
+
+  const outputPath = path.join(dirPath, filePath);
 
   await promisify(fs.writeFile)(outputPath, content);
 
