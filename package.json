@@ -1,0 +1,44 @@
+{
+  "name": "gatsby-plugin-verify-brave",
+  "version": "0.0.0-development",
+  "description": "Gatsby plugin for Brave Rewards Verification",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "prepack": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keplersj/gatsby-plugin-verify-brave.git"
+  },
+  "keywords": [
+    "gatsby-plugin",
+    "brave",
+    "brave-rewards",
+    "bat",
+    "gatsby",
+    "website"
+  ],
+  "author": "Kepler Sticka-Jones <kepler@stickajones.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keplersj/gatsby-plugin-verify-brave/issues"
+  },
+  "homepage": "https://github.com/keplersj/gatsby-plugin-verify-brave#readme",
+  "devDependencies": {
+    "@types/common-tags": "^1.8.0",
+    "@types/jest": "^24.0.24",
+    "gatsby": "^2.18.17",
+    "jest": "^24.9.0",
+    "jest-runner-prettier": "^0.3.4",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "common-tags": "^1.8.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.0.0"
+  }
+}
