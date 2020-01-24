@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "common-tags": "^1.8.0",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^1.0.2"
   },
   "peerDependencies": {
     "gatsby": "^2.0.0"
