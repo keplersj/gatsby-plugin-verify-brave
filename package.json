@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/keplersj/gatsby-plugin-verify-brave.git"
   },
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "keywords": [
     "gatsby-plugin",
     "brave",
@@ -32,7 +35,6 @@
     "@stryker-mutator/typescript": "^2.4.0",
     "@types/common-tags": "^1.8.0",
     "@types/jest": "^25.1.0",
-    "@types/mkdirp": "^0.5.2",
     "gatsby": "^2.18.17",
     "jest": "^24.9.0",
     "jest-runner-prettier": "^0.3.4",
@@ -41,8 +43,7 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "common-tags": "^1.8.0",
-    "mkdirp": "^1.0.2"
+    "common-tags": "^1.8.0"
   },
   "peerDependencies": {
     "gatsby": "^2.0.0"

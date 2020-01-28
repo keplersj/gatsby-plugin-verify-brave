@@ -1,7 +1,6 @@
 jest.mock("fs");
 
-import mkdirp from "mkdirp";
-import { writeFile } from "fs";
+import { promises as fs } from "fs";
 import { BuildArgs } from "gatsby";
 import { onPostBuild } from "../gatsby-node";
 
@@ -45,19 +44,21 @@ describe("gatsby-plugin-verify-brave Gatsby Node API", () => {
         token: "abcdefABCDEF0123456789"
       } as any);
 
-      expect(mkdirp).toHaveBeenCalled();
-      expect(((mkdirp as unknown) as jest.Mock).mock.calls)
+      expect(fs.mkdir).toHaveBeenCalled();
+      expect(((fs.mkdir as unknown) as jest.Mock).mock.calls)
         .toMatchInlineSnapshot(`
         Array [
           Array [
             "./public/.well-known",
-            [Function],
+            Object {
+              "recursive": true,
+            },
           ],
         ]
       `);
 
-      expect(writeFile).toHaveBeenCalled();
-      expect(((writeFile as unknown) as jest.Mock).mock.calls)
+      expect(fs.writeFile).toHaveBeenCalled();
+      expect(((fs.writeFile as unknown) as jest.Mock).mock.calls)
         .toMatchInlineSnapshot(`
         Array [
           Array [
@@ -66,7 +67,6 @@ describe("gatsby-plugin-verify-brave Gatsby Node API", () => {
 
         Domain: test.dev
         Token: abcdefABCDEF0123456789",
-            [Function],
           ],
         ]
       `);

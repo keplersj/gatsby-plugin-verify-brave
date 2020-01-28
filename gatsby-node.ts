@@ -1,9 +1,7 @@
 import { stripIndent } from "common-tags";
 import * as path from "path";
-import * as fs from "fs";
-import { promisify } from "util";
+import { promises as fs } from "fs";
 import { GatsbyNode } from "gatsby";
-import mkdirp from "mkdirp";
 
 const dirPath = "./public/.well-known";
 const filePath = "brave-rewards-verification.txt";
@@ -43,11 +41,11 @@ export const onPostBuild: GatsbyNode["onPostBuild"] = async (
 
     `;
 
-  await promisify(mkdirp)(dirPath);
+  await fs.mkdir(dirPath, { recursive: true });
 
   const outputPath = path.join(dirPath, filePath);
 
-  await promisify(fs.writeFile)(outputPath, content);
+  await fs.writeFile(outputPath, content);
 
   args.reporter.success("Brave Rewards verification file created");
 };
