@@ -3,7 +3,7 @@ import * as path from "path";
 import { promises as fs } from "fs";
 import { GatsbyNode } from "gatsby";
 
-const dirPath = "./public/.well-known";
+const directionPath = "./public/.well-known";
 const filePath = "brave-rewards-verification.txt";
 
 interface PluginOptions {
@@ -12,7 +12,7 @@ interface PluginOptions {
 }
 
 export const onPostBuild: GatsbyNode["onPostBuild"] = async (
-  args,
+  arguments_,
   pluginOptions
 ) => {
   const options = pluginOptions as PluginOptions;
@@ -41,11 +41,11 @@ export const onPostBuild: GatsbyNode["onPostBuild"] = async (
 
     `;
 
-  await fs.mkdir(dirPath, { recursive: true });
+  await fs.mkdir(directionPath, { recursive: true });
 
-  const outputPath = path.join(dirPath, filePath);
+  const outputPath = path.join(directionPath, filePath);
 
   await fs.writeFile(outputPath, content);
 
-  args.reporter.success("Brave Rewards verification file created");
+  arguments_.reporter.success("Brave Rewards verification file created");
 };

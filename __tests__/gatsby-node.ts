@@ -4,7 +4,7 @@ import { promises as fs } from "fs";
 import { BuildArgs } from "gatsby";
 import { onPostBuild } from "../gatsby-node";
 
-const mockOnPostBuildArgs = ({
+const mockOnPostBuildArguments = ({
   reporter: {
     success: jest.fn()
   }
@@ -14,7 +14,7 @@ describe("gatsby-plugin-verify-brave Gatsby Node API", () => {
   describe("onPostBuild hook", () => {
     it("throws if no plugin options are provided", async () => {
       await expect(
-        onPostBuild!(mockOnPostBuildArgs, undefined)
+        onPostBuild!(mockOnPostBuildArguments, undefined)
       ).rejects.toThrowErrorMatchingInlineSnapshot(
         `"No options passed to gatsby-plugin-verify-brave! Please see usage in package README."`
       );
@@ -22,7 +22,7 @@ describe("gatsby-plugin-verify-brave Gatsby Node API", () => {
 
     it("throws if no token is provided in plugin options", async () => {
       await expect(
-        onPostBuild!(mockOnPostBuildArgs, { domain: "test.dev" } as any)
+        onPostBuild!(mockOnPostBuildArguments, { domain: "test.dev" } as any)
       ).rejects.toThrowErrorMatchingInlineSnapshot(
         `"No \`token\` passed to gatsby-plugin-brave! Please see usage in package README."`
       );
@@ -30,7 +30,7 @@ describe("gatsby-plugin-verify-brave Gatsby Node API", () => {
 
     it("throws if no domain is provided in plugin options", async () => {
       await expect(
-        onPostBuild!(mockOnPostBuildArgs, {
+        onPostBuild!(mockOnPostBuildArguments, {
           token: "abcdefABCDEF0123456789"
         } as any)
       ).rejects.toThrowErrorMatchingInlineSnapshot(
@@ -39,7 +39,7 @@ describe("gatsby-plugin-verify-brave Gatsby Node API", () => {
     });
 
     it("works as expected, given the correct options", async () => {
-      await onPostBuild!(mockOnPostBuildArgs, {
+      await onPostBuild!(mockOnPostBuildArguments, {
         domain: "test.dev",
         token: "abcdefABCDEF0123456789"
       } as any);
@@ -71,9 +71,10 @@ describe("gatsby-plugin-verify-brave Gatsby Node API", () => {
         ]
       `);
 
-      expect(mockOnPostBuildArgs.reporter.success).toHaveBeenCalled();
-      expect((mockOnPostBuildArgs.reporter.success as jest.Mock).mock.calls)
-        .toMatchInlineSnapshot(`
+      expect(mockOnPostBuildArguments.reporter.success).toHaveBeenCalled();
+      expect(
+        (mockOnPostBuildArguments.reporter.success as jest.Mock).mock.calls
+      ).toMatchInlineSnapshot(`
         Array [
           Array [
             "Brave Rewards verification file created",
