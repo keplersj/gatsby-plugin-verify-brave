@@ -31,7 +31,7 @@
   "homepage": "https://github.com/keplersj/gatsby-plugin-verify-brave#readme",
   "devDependencies": {
     "@stryker-mutator/core": "^2.4.0",
-    "@stryker-mutator/jest-runner": "^2.4.0",
+    "@stryker-mutator/jest-runner": "^3.0.0",
     "@stryker-mutator/typescript": "^3.0.0",
     "@types/common-tags": "^1.8.0",
     "@types/jest": "^25.1.0",
