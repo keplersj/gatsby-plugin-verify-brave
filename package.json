@@ -41,7 +41,7 @@
     "jest": "^25.1.0",
     "jest-runner-eslint": "^0.7.6",
     "jest-runner-prettier": "^0.3.4",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.4",
     "ts-jest": "^25.2.1",
     "typescript": "^3.7.4"
   },
