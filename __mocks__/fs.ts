@@ -10,5 +10,5 @@ export const mkdir = jest.fn((path, options, callback) => {
 
 export const promises = {
   writeFile: jest.fn(),
-  mkdir: jest.fn()
+  mkdir: jest.fn(),
 };

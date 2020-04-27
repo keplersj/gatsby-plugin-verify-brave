@@ -6,8 +6,8 @@ import { onPostBuild } from "../gatsby-node";
 
 const mockOnPostBuildArguments = ({
   reporter: {
-    success: jest.fn()
-  }
+    success: jest.fn(),
+  },
 } as unknown) as BuildArgs;
 
 describe("gatsby-plugin-verify-brave Gatsby Node API", () => {
@@ -31,7 +31,7 @@ describe("gatsby-plugin-verify-brave Gatsby Node API", () => {
     it("throws if no domain is provided in plugin options", async () => {
       await expect(
         onPostBuild!(mockOnPostBuildArguments, {
-          token: "abcdefABCDEF0123456789"
+          token: "abcdefABCDEF0123456789",
         } as any)
       ).rejects.toThrowErrorMatchingInlineSnapshot(
         `"No \`domain\` passed to gatsby-plugin-brave! Please see usage in package README."`
@@ -41,7 +41,7 @@ describe("gatsby-plugin-verify-brave Gatsby Node API", () => {
     it("works as expected, given the correct options", async () => {
       await onPostBuild!(mockOnPostBuildArguments, {
         domain: "test.dev",
-        token: "abcdefABCDEF0123456789"
+        token: "abcdefABCDEF0123456789",
       } as any);
 
       expect(fs.mkdir).toHaveBeenCalled();

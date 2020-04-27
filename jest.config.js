@@ -8,7 +8,7 @@ const testPathIgnorePatterns = [
   "/index.js.map",
   "/index.d.ts",
   "/index.d.ts.map",
-  "/coverage/"
+  "/coverage/",
 ];
 
 module.exports = {
@@ -17,12 +17,12 @@ module.exports = {
     {
       displayName: "test",
       preset: "ts-jest",
-      collectCoverage: true
+      collectCoverage: true,
     },
     {
       displayName: "lint:prettier",
       preset: "jest-runner-prettier",
-      testPathIgnorePatterns
+      testPathIgnorePatterns,
     },
     {
       runner: "eslint",
@@ -30,9 +30,9 @@ module.exports = {
       testMatch: [
         "<rootDir>/**/*.ts",
         "<rootDir>/**/*.tsx",
-        "<rootDir>/**/*.js"
+        "<rootDir>/**/*.js",
       ],
-      testPathIgnorePatterns
-    }
-  ]
+      testPathIgnorePatterns,
+    },
+  ],
 };
