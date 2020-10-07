@@ -32,7 +32,7 @@
   "devDependencies": {
     "@stryker-mutator/core": "^3.1.0",
     "@stryker-mutator/jest-runner": "^3.1.0",
-    "@stryker-mutator/typescript": "^3.1.0",
+    "@stryker-mutator/typescript": "^4.0.0",
     "@types/common-tags": "^1.8.0",
     "@types/jest": "^26.0.0",
     "eslint": "^6.8.0",
