@@ -37,7 +37,7 @@
     "@types/jest": "^26.0.0",
     "eslint": "^6.8.0",
     "eslint-config-starstuff": "^1.4.42",
-    "gatsby": "^2.18.17",
+    "gatsby": "^4.25.7",
     "jest": "^25.4.0",
     "jest-runner-eslint": "^0.10.0",
     "jest-runner-prettier": "^0.3.6",
